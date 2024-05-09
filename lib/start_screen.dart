@@ -3,19 +3,17 @@ import "package:flutter/material.dart";
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
-class PurpleContiner extends StatelessWidget {
-  const PurpleContiner({
+class StartScreen extends StatelessWidget {
+  const StartScreen({
     super.key,
     required this.colors,
   });
 
   final List<Color> colors;
 
-  void onPressed(){
-    // TODO: need to complete the logic 
-
+  void onPressed() {
+    // TODO: need to complete the logic
   }
-
   @override
   Widget build(context) {
     return Container(
