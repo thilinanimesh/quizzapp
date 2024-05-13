@@ -1,8 +1,5 @@
 import "package:flutter/material.dart";
 
-const startAlignment = Alignment.topLeft;
-const endAlignment = Alignment.bottomRight;
-
 class StartScreen extends StatelessWidget {
   const StartScreen({
     super.key,
@@ -16,40 +13,36 @@ class StartScreen extends StatelessWidget {
   }
   @override
   Widget build(context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: colors,
-          begin: startAlignment,
-          end: endAlignment,
-        ),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              "assets/images/quiz-logo.png",
-              width: 200,
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            "assets/images/quiz-logo.png",
+            width: 200,
+          ),
+          // Adding padding or Sized box can fill the size between the widgets. As shown as below.
+          const SizedBox(
+            height: 80,
+          ),
+          const Text(
+            "Learn Flutter the fun Way!",
+            style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255), fontSize: 24.00),
+          ),
+          // Adding padding or Sized box can fill the size between the widgets. As shown as below.
+          const SizedBox(
+            height: 40,
+          ),
+          OutlinedButton.icon(
+            onPressed: onPressed,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
             ),
-            // Adding padding or Sized box can fill the size between the widgets. As shown as below.
-            const SizedBox(
-              height: 40,
-            ),
-            const Text(
-              "Learn Flutter the fun Way!",
-              style: TextStyle(color: Colors.white, fontSize: 30.00),
-            ),
-            // Adding padding or Sized box can fill the size between the widgets. As shown as below.
-            const SizedBox(
-              height: 40,
-            ),
-            FilledButton(
-              onPressed: onPressed,
-              child: const Text('Start Quiz'),
-            ),
-          ],
-        ),
+            icon: const Icon(Icons.start),
+            label: const Text('Start Quiz'),
+          )
+        ],
       ),
     );
   }

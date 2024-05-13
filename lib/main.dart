@@ -2,6 +2,9 @@ import "package:flutter/material.dart";
 
 import "package:quizzapp/start_screen.dart";
 
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
+
 void main() {
   const List<Color> color = [
     Color.fromARGB(255, 123, 3, 252),
@@ -9,11 +12,20 @@ void main() {
   ];
 
   runApp(
-    const MaterialApp(
+    MaterialApp(
       title: "Quizz App",
       home: Scaffold(
-        body: StartScreen(
-          colors: color,
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: color,
+              begin: startAlignment,
+              end: endAlignment,
+            ),
+          ),
+          child: const StartScreen(
+            colors: color,
+          ),
         ),
       ),
     ),
